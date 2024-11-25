@@ -25,36 +25,48 @@ const Header = () => {
 
         {/* Navigation Menu */}
         <nav
-          className={`${isOpen ? "block" : "hidden"
-            } absolute lg:relative top-full left-0 w-full lg:w-auto lg:flex lg:items-center bg-black lg:bg-transparent p-6 lg:p-0`}
+          className={`${isOpen ? "block" : "hidden"} absolute lg:relative top-full left-0 w-full lg:w-auto lg:flex lg:items-center bg-black lg:bg-transparent p-6 lg:p-0`}
         >
           <ul className="flex flex-col text-accent lg:flex-row gap-4 lg:gap-8 text-base sm:text-lg font-medium">
-            <li
-              className="hover:text-yellow-600 cursor-pointer"
-              style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
-            >
-              Home
+            <li>
+              <a
+                href="#home"
+                className="hover:text-yellow-600 cursor-pointer"
+                style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
+              >
+                Home
+              </a>
             </li>
-            <li
-              className="hover:text-yellow-600 cursor-pointer"
-              style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
-            >
-              About
+            <li>
+              <a
+                href="#about"
+                className="hover:text-yellow-600 cursor-pointer"
+                style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
+              >
+                About
+              </a>
             </li>
-            <li
-              className="hover:text-yellow-600 cursor-pointer"
-              style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
-            >
-              Register
+            <li>
+              <a
+                href="#register"
+                className="hover:text-yellow-600 cursor-pointer"
+                style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
+              >
+                Register
+              </a>
             </li>
-            <li
-              className="hover:text-yellow-600 cursor-pointer"
-              style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
-            >
-              Contact
+            <li>
+              <a
+                href="#contact"
+                className="hover:text-yellow-600 cursor-pointer"
+                style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
+              >
+                Contact
+              </a>
             </li>
           </ul>
         </nav>
+
       </div>
     </header>
   );
