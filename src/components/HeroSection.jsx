@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <div
       className="h-screen bg-cover bg-center flex flex-col items-start justify-center text-left pl-6 md:pl-12 lg:pl-20 xl:pl-32"
-      style={{ backgroundImage: "url('/image.png')" }}
+      style={{ backgroundImage: "url('/image.webp')" }}
     >
       <h1 className="text-l sm:text-xl md:text-2xl text-white lg:text-2xl ">
         MGM COET NOIDA

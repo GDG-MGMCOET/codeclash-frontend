@@ -10,6 +10,7 @@ export default {
       colors: {
         accent: "#FFC854",
       },
+      
     },
   },
   plugins: [],
