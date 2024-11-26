@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Countdown = () => {
+export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -8,7 +8,7 @@ const Countdown = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2024-11-28T02:00:00"); // Example date
+    const targetDate = new Date("2024-12-02T02:00:00"); // Example time
     const interval = setInterval(() => {
       const now = new Date();
       const diff = targetDate - now;
@@ -24,21 +24,25 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="flex flex-row justify-center items-center space-x-6 text-center text-white mt-6 mb-3">
+    <div className="flex select-none flex-row items-center justify-center gap-4 text-center font-mono">
       <div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl bg-gray-800 text-white px-4 py-2">{timeLeft.days}</h2>
+        <h2 className="w-16 rounded-xl bg-gray-800 px-3 py-2 text-3xl text-white sm:w-20 sm:text-4xl md:text-5xl">
+          {timeLeft.days}
+        </h2>
         <p className="text-accent">Days</p>
       </div>
       <div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl bg-gray-800 text-white px-4 py-2">{timeLeft.hours}</h2>
+        <h2 className="w-16 rounded-xl bg-gray-800 px-3 py-2 text-3xl text-white sm:w-20 sm:text-4xl md:text-5xl">
+          {timeLeft.hours}
+        </h2>
         <p className="text-accent">Hours</p>
       </div>
       <div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl bg-gray-800 text-white px-4 py-2">{timeLeft.minutes}</h2>
+        <h2 className="w-16 rounded-xl bg-gray-800 px-3 py-2 text-3xl text-white sm:w-20 sm:text-4xl md:text-5xl">
+          {timeLeft.minutes}
+        </h2>
         <p className="text-accent">Minutes</p>
       </div>
     </div>
   );
-};
-
-export default Countdown;
+}

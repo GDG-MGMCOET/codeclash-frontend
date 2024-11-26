@@ -5,17 +5,19 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full fixed  top-0 left-0 font-bold text-accent z-50 font-body py-4 px-6 bg-[#00000044] shadow-xl backdrop-blur-md">
-      <div className="flex justify-between items-center container mx-auto ">
-        <img
-          src="/Logo dark.png"
-          alt="GDG MGM COET Logo"
-          className="h-8 sm:h-10 md:h-12 lg:h-14 drop-shadow-lg transition-all duration-300"
-        />
+    <header className="fixed left-0 top-0 z-50 w-full bg-[#00000044] px-6 py-4 font-body font-bold text-accent shadow-xl backdrop-blur-md">
+      <div className="container mx-auto flex items-center justify-between">
+        <Link to="/">
+          <img
+            src="/Logo dark.png"
+            alt="GDG MGM COET Logo"
+            className="h-8 rounded-full transition-all duration-300 sm:h-10 md:h-12 lg:h-14"
+          />
+        </Link>
 
         {/* Hamburger Menu for Mobile */}
         <button
-          className="text-3xl lg:hidden focus:outline-none text-accent"
+          className="text-3xl text-accent focus:outline-none lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen ? "true" : "false"}
         >
@@ -26,13 +28,13 @@ export default function Header() {
         <nav
           className={`${
             isOpen ? "block" : "hidden"
-          } absolute lg:relative top-full left-0 w-full lg:w-auto lg:flex lg:items-center bg-black lg:bg-transparent p-6 lg:p-0`}
+          } absolute left-0 top-full w-full bg-black p-6 font-mono lg:relative lg:flex lg:w-auto lg:items-center lg:bg-transparent lg:p-0`}
         >
-          <ul className="flex flex-col text-accent lg:flex-row gap-4 lg:gap-8 text-base sm:text-lg font-medium">
+          <ul className="flex flex-col gap-4 text-base font-medium text-accent sm:text-lg lg:flex-row lg:gap-8">
             <li>
               <a
                 href="#home"
-                className="hover:text-yellow-600 cursor-pointer"
+                className="cursor-pointer hover:text-yellow-600"
                 style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
               >
                 Home
@@ -41,7 +43,7 @@ export default function Header() {
             <li>
               <a
                 href="#about"
-                className="hover:text-yellow-600 cursor-pointer"
+                className="cursor-pointer hover:text-yellow-600"
                 style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
               >
                 About
@@ -50,7 +52,7 @@ export default function Header() {
             <li>
               <Link
                 to="/register"
-                className="hover:text-yellow-600 cursor-pointer"
+                className="cursor-pointer hover:text-yellow-600"
                 style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
               >
                 Register
@@ -59,7 +61,7 @@ export default function Header() {
             <li>
               <a
                 href="#contact"
-                className="hover:text-yellow-600 cursor-pointer"
+                className="cursor-pointer hover:text-yellow-600"
                 style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
               >
                 Contact

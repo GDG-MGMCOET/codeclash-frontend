@@ -4,12 +4,12 @@ import Hero from "../components/HeroSection";
 
 export default function LandingPage() {
   return (
-    <div className="App">
+    <div className="App text-white">
       <Header />
       <section id="home">
         <Hero />
       </section>
-      <section id="about">
+      <section id="about" className="scroll-mt-16">
         <About />
       </section>
     </div>
