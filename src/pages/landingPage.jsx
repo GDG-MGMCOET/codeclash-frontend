@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import About from "../components/About";
 import Hero from "../components/HeroSection";
+import Footer from "../components/Footer";
 
 export default function LandingPage() {
   return (
@@ -12,6 +13,7 @@ export default function LandingPage() {
       <section id="about" className="scroll-mt-16">
         <About />
       </section>
+      <Footer />
     </div>
   );
 }
