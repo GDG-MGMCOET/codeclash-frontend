@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full fixed bg-gradient-to-tl from-gray-800 to-black opacity-90    top-0 left-0 font-bold text-accent shadow-lg z-50 font-body">
-      <div className="flex justify-between items-center max-w-6xl mx-auto ">
+    <header className="w-full fixed  top-0 left-0 font-bold text-accent z-50 font-body py-4 px-6 bg-[#00000044] shadow-xl backdrop-blur-md">
+      <div className="flex justify-between items-center container mx-auto ">
         <img
           src="/Logo dark.png"
           alt="GDG MGM COET Logo"
@@ -70,6 +70,4 @@ const Header = () => {
       </div>
     </header>
   );
-};
-
-export default Header;
+}
