@@ -30,13 +30,13 @@ const Header = () => {
         >
           <ul className="flex flex-col text-accent lg:flex-row gap-4 lg:gap-8 text-base sm:text-lg font-medium">
             <li>
-              <a
-                href="#home"
+              <Link
+                to="/"
                 className="hover:text-yellow-600 cursor-pointer"
                 style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <a
