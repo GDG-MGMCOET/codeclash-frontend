@@ -1,13 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="w-full fixed bg-gradient-to-tl from-gray-800 to-black opacity-90    top-0 left-0 font-bold text-accent shadow-lg z-50 font-body">
-
       <div className="flex justify-between items-center max-w-6xl mx-auto ">
-
         <img
           src="/Logo dark.png"
           alt="GDG MGM COET Logo"
@@ -25,7 +24,9 @@ const Header = () => {
 
         {/* Navigation Menu */}
         <nav
-          className={`${isOpen ? "block" : "hidden"} absolute lg:relative top-full left-0 w-full lg:w-auto lg:flex lg:items-center bg-black lg:bg-transparent p-6 lg:p-0`}
+          className={`${
+            isOpen ? "block" : "hidden"
+          } absolute lg:relative top-full left-0 w-full lg:w-auto lg:flex lg:items-center bg-black lg:bg-transparent p-6 lg:p-0`}
         >
           <ul className="flex flex-col text-accent lg:flex-row gap-4 lg:gap-8 text-base sm:text-lg font-medium">
             <li>
@@ -47,13 +48,13 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a
-                href="#register"
+              <Link
+                to="/register"
                 className="hover:text-yellow-600 cursor-pointer"
                 style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
               >
                 Register
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -66,7 +67,6 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-
       </div>
     </header>
   );

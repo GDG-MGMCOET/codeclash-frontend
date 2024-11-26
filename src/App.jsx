@@ -1,19 +1,16 @@
 import React from "react";
-import Header from "./components/Header";
-import Hero from "./components/HeroSection";
-import About from "./components/About";
+import Register from "./components/Register";
+import LandingPage from "./pages/landingPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <section id="home">
-        <Hero />
-      </section>
-      <section id="about">
-        <About />
-      </section>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Router>
   );
 }
 
