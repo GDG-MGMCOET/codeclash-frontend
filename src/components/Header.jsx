@@ -32,13 +32,14 @@ export default function Header() {
         >
           <ul className="flex flex-col gap-4 text-base font-medium text-accent sm:text-lg lg:flex-row lg:gap-8">
             <li>
-              <a
-                href="#home"
-                className="cursor-pointer hover:text-yellow-600"
+
+              <Link
+                to="/"
+                className="hover:text-yellow-600 cursor-pointer"
                 style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
               <a
