@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-tl from-slate-800 to-gray-900 p-6 text-white md:p-10">
+    <div className="background min-h-screen p-6 text-white md:p-10">
       <div className="container mx-auto flex max-w-[1200px] flex-col gap-10 px-6 text-justify">
         <section className="mt-10">
           <h1 className="mb-4 text-center font-mono text-4xl font-bold text-white">
@@ -13,7 +13,7 @@ const About = () => {
             anticipated event organized by the GDG team to inspire, challenge,
             and showcase the coding talent within our student community.
             Scheduled to take place on{" "}
-            <strong>2nd December from 2:30 PM to 4:00 PM</strong>, this
+            <strong>2nd December from 1:45 PM to 3:15 PM</strong>, this
             competition is crafted to push your problem-solving abilities,
             logical reasoning, and programming expertise to the next level.
           </p>

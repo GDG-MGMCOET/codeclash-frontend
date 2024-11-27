@@ -13,3 +13,6 @@ export const CLASS_OPTIONS = [
   "TTCS-C",
   "BTCS",
 ];
+
+export const CODING_COMMUNITY =
+  "https://chat.whatsapp.com/Fv8DFFkNiySFFkTynK1ifo";
