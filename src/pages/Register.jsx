@@ -60,11 +60,12 @@ export default function Register() {
                 },
               ]}
               validateDebounce={500}
+              className="w-2/5"
             >
-              <Input className="w-80 text-base" placeholder="First Name" />
+              <Input className="w-full text-base" placeholder="First Name" />
             </Form.Item>
-            <Form.Item label="Last Name" name="lastName">
-              <Input className="w-80 text-base" placeholder="Last Name" />
+            <Form.Item label="Last Name" name="lastName" className="w-2/5">
+              <Input className="w-full text-base" placeholder="Last Name" />
             </Form.Item>
           </div>
           <div className="flex w-full justify-between">
@@ -78,10 +79,11 @@ export default function Register() {
                 },
               ]}
               validateDebounce={500}
+              className="w-2/5"
             >
               <InputNumber
-                addonBefore="+91"
-                className="w-80 text-base"
+                addonBefore={<div className="h-full w-full bg-white">+91</div>}
+                className="w-full text-base"
                 placeholder="10 digit phone number"
               />
             </Form.Item>
@@ -96,11 +98,12 @@ export default function Register() {
                 },
               ]}
               validateDebounce={500}
+              className="w-2/5"
             >
-              <Input className="w-80 text-base" placeholder="Email" />
+              <Input className="w-full text-base" placeholder="Email" />
             </Form.Item>
           </div>
-          <div className="flex justify-between">
+          <div className="flex w-full justify-between">
             <Form.Item
               label="Class"
               name="standard"
@@ -112,8 +115,9 @@ export default function Register() {
               ]}
               validateDebounce={500}
               initialValue={""}
+              // className="w-2/5"
             >
-              <Select className="text-base" options={CLASSES} />
+              <Select options={CLASSES} className="w-full text-base" />
             </Form.Item>
             <Form.Item
               label="Class Roll no."
@@ -126,11 +130,15 @@ export default function Register() {
                 },
               ]}
               validateDebounce={500}
+              className="w-2/5"
             >
-              <Input className="text-base" placeholder="Class Roll number" />
+              <Input
+                className="w-full text-base"
+                placeholder="Class Roll number"
+              />
             </Form.Item>
           </div>
-          <div className="flex justify-between">
+          <div className="flex w-full justify-between">
             <Form.Item
               label="Username"
               name="hackerrank_username"
@@ -142,8 +150,12 @@ export default function Register() {
                 },
               ]}
               validateDebounce={500}
+              className="w-2/5"
             >
-              <Input className="text-base" placeholder="Hackerrank Username" />
+              <Input
+                className="w-full text-base"
+                placeholder="Hackerrank Username"
+              />
             </Form.Item>
             <Form.Item
               label="Division"
@@ -156,8 +168,9 @@ export default function Register() {
               ]}
               validateDebounce={500}
               initialValue={""}
+              className="w-2/5"
             >
-              <Select options={DIVISIONS} className="text-base" />
+              <Select options={DIVISIONS} className="w-full text-base" />
             </Form.Item>
           </div>
           <Button

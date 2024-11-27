@@ -1,6 +1,6 @@
 export const registerService = {
   register: async ({ formData }) => {
-    const res = await fetch("http://localhost:3001/v1/participants", {
+    const res = await fetch("https://codeclash-backend.onrender.com/v1/participants", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
