@@ -1,4 +1,7 @@
-export const DIVISION_OPTIONS = ["Division 1", "Division 2"];
+export const DIVISION_OPTIONS = [
+  { value: "Division 1", eligiblity: "Only for 1st and 2nd year" },
+  { value: "Division 2", eligiblity: "Open to all years" },
+];
 
 export const CLASS_OPTIONS = [
   "FT-1",

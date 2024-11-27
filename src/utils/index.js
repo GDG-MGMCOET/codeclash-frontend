@@ -1,12 +1,5 @@
-import { CLASS_OPTIONS, DIVISION_OPTIONS } from "./constant";
+import { CLASS_OPTIONS } from "./constant";
 import { registerService } from "../service";
-
-export const DIVISIONS = [
-  { value: "", label: "Select Division" },
-  ...DIVISION_OPTIONS.map((division) => {
-    return { value: division, label: division };
-  }),
-];
 
 export const CLASSES = [
   { value: "", label: "Select Class" },
@@ -14,6 +7,14 @@ export const CLASSES = [
     return { value: cur_class, label: cur_class };
   }),
 ];
+
+export const validatePhone = (rule, value) => {
+  const phoneRegExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if (phoneRegExp.test(value)) {
+    return Promise.resolve();
+  }
+  return Promise.reject("Please enter a valid 10 digit Phone Number");
+};
 
 export const formatFormData = ({ data }) => {
   const formattedData = {
@@ -45,6 +46,7 @@ export const registerParticipant = async ({
   formData,
   showMessage,
   formInstance,
+  setLoading,
 }) => {
   const res = await registerService.register({ formData });
   if (res?.success) {
@@ -61,4 +63,5 @@ export const registerParticipant = async ({
         : "Error registering, please try again later",
     });
   }
+  setLoading(false);
 };
