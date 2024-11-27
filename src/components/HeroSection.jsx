@@ -1,5 +1,6 @@
 import React from "react";
 import Countdown from "./Countdown ";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -15,9 +16,12 @@ const HeroSection = () => {
       </h1>
       <span className="text-2xl sm:text-3xl">2024</span>
       <Countdown />
-      <button className="rounded-full bg-accent px-12 py-3 font-mono font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600 md:text-lg">
+      <Link
+        to="/register"
+        className="rounded-full bg-accent px-12 py-3 font-mono font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600 md:text-lg"
+      >
         Register Now
-      </button>
+      </Link>
     </div>
   );
 };
