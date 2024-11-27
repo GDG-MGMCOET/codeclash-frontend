@@ -44,19 +44,19 @@ export const clearForm = ({ formInstance }) => {
 
 export const registerParticipant = async ({
   formData,
-  showMessage,
+  openNotificationWithIcon,
   formInstance,
   setLoading,
 }) => {
   const res = await registerService.register({ formData });
   if (res?.success) {
     clearForm({ formInstance });
-    showMessage({
+    openNotificationWithIcon({
       type: "success",
       content: "Participant registered successfully",
     });
   } else {
-    showMessage({
+    openNotificationWithIcon({
       type: "error",
       content: res?.message
         ? res.message

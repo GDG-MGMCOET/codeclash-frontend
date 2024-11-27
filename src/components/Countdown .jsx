@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from "react";
 
+function changeTime(now) {
+  const targetDate = new Date("2024-12-02T13:45:00");
+  const diff = targetDate - now;
+
+  return [
+    Math.floor(diff / (1000 * 60 * 60 * 24)),
+    Math.floor((diff / (1000 * 60 * 60)) % 24),
+    Math.floor((diff / (1000 * 60)) % 60),
+  ];
+}
+
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -8,17 +19,24 @@ export default function Countdown() {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2024-12-02T13:45:00");
+    const [days, hours, minutes] = changeTime(new Date());
+    setTimeLeft({
+      days: days,
+      hours: hours,
+      minutes: minutes,
+    });
     const interval = setInterval(() => {
-      const now = new Date();
-      const diff = targetDate - now;
-
+      if (days <= 0 && hours <= 0 && minutes <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0 });
+        clearInterval(interval);
+      }
+      const [currentDay, currentHour, currentMinutes] = changeTime(new Date());
       setTimeLeft({
-        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((diff / (1000 * 60)) % 60),
+        days: currentDay,
+        hours: currentHour,
+        minutes: currentMinutes,
       });
-    }, 1000);
+    }, 30000);
 
     return () => clearInterval(interval);
   }, []);

@@ -1,6 +1,6 @@
 import React from "react";
 import Countdown from "./Countdown ";
-import { Button } from "antd";
+import { Button, ConfigProvider } from "antd";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -17,11 +17,18 @@ const HeroSection = () => {
       </h1>
       <span className="text-2xl sm:text-3xl">2024</span>
       <Countdown />
-      <Button className="rounded-full bg-accent py-3 font-mono font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600 md:text-lg">
-        <Link to="/register" className="w-full px-12">
-          Register Now
-        </Link>
-      </Button>
+      <Link to="/register" className="rounded-full">
+        <ConfigProvider
+          theme={{
+            token: { colorPrimary: "#FFC854" },
+            components: { Button: { defaultHoverBg: "#000" } },
+          }}
+        >
+          <Button className="rounded-full border-none bg-accent px-12 py-6 font-mono font-bold text-black md:text-lg">
+            Register Now
+          </Button>
+        </ConfigProvider>
+      </Link>
     </div>
   );
 };
