@@ -1,17 +1,28 @@
-import { Form, Input, Select, Button } from "antd";
+import { Form, Input, Select, Button, message } from "antd";
 import { DIVISIONS, CLASSES } from "../utils";
+import { formatFormData, registerParticipant } from "../utils";
 
 export default function Register() {
+  const [form] = Form.useForm();
+  const [messageApi, contextHolder] = message.useMessage();
+  const showMessage = ({ type, content }) => {
+    messageApi.open({
+      type,
+      content,
+    });
+  };
   return (
     <>
+      {contextHolder}
       <Form
+        form={form}
         name="wrap"
         labelCol={{ flex: "110px" }}
         labelAlign="left"
         labelWrap
         wrapperCol={{ flex: 1 }}
         colon={false}
-        className="!w-3/4 mx-auto text-base"
+        className="mx-auto mt-20 !w-3/4 text-base"
         requiredMark={(label, info) => {
           return (
             <div>
@@ -21,14 +32,19 @@ export default function Register() {
           );
         }}
         onFinish={(value) => {
-          console.log(value);
+          const formattedData = formatFormData({ data: value });
+          registerParticipant({
+            formData: formattedData,
+            showMessage,
+            formInstance: form,
+          });
         }}
         autoComplete="off"
       >
         <div className="flex justify-between">
           <Form.Item
-            label="Name"
-            name="name"
+            label="First Name"
+            name="firstName"
             rules={[
               {
                 required: true,
@@ -38,8 +54,14 @@ export default function Register() {
             ]}
             validateDebounce={500}
           >
-            <Input className="text-base" placeholder="Full Name" />
+            <Input className="text-base" placeholder="First Name" />
           </Form.Item>
+          <Form.Item label="Last Name" name="lastName">
+            <Input className="text-base" placeholder="Last Name" />
+          </Form.Item>
+        </div>
+
+        <div className="flex justify-between">
           <Form.Item
             label="Email"
             name="email"
@@ -52,18 +74,15 @@ export default function Register() {
             ]}
             validateDebounce={500}
           >
-            <Input className="text-base" />
+            <Input className="text-base" placeholder="Email" />
           </Form.Item>
-        </div>
-
-        <div className="flex justify-between">
           <Form.Item
             label="Username"
-            name="hackerrank_us"
+            name="hackerrank_username"
             rules={[
               {
                 required: true,
-                message: "Name is required",
+                message: "Hackerrank username is required",
                 whitespace: true,
               },
             ]}
@@ -71,6 +90,9 @@ export default function Register() {
           >
             <Input className="text-base" placeholder="Hackerrank Username" />
           </Form.Item>
+        </div>
+
+        <div className="flex justify-between">
           <Form.Item
             label="Phone"
             name="phone"
@@ -82,24 +104,7 @@ export default function Register() {
             ]}
             validateDebounce={500}
           >
-            <Input className="text-base" />
-          </Form.Item>
-        </div>
-
-        <div className="flex justify-between">
-          <Form.Item
-            label="Class"
-            name="standard"
-            rules={[
-              {
-                required: true,
-                message: "Class is required",
-              },
-            ]}
-            validateDebounce={500}
-            initialValue={""}
-          >
-            <Select className="text-base" options={CLASSES} />
+            <Input className="text-base" placeholder="10 digit phone number" />
           </Form.Item>
           <Form.Item
             label="Division"
@@ -119,18 +124,32 @@ export default function Register() {
 
         <div className="flex justify-between">
           <Form.Item
-            label="Class Roll no."
-            name="Class Roll Number"
+            label="Class"
+            name="standard"
             rules={[
               {
                 required: true,
-                message: "Name is required",
+                message: "Class is required",
+              },
+            ]}
+            validateDebounce={500}
+            initialValue={""}
+          >
+            <Select className="text-base" options={CLASSES} />
+          </Form.Item>
+          <Form.Item
+            label="Class Roll no."
+            name="class_roll_number"
+            rules={[
+              {
+                required: true,
+                message: "Roll no. is required",
                 whitespace: true,
               },
             ]}
             validateDebounce={500}
           >
-            <Input className="text-base" placeholder="Hackerrank Username" />
+            <Input className="text-base" placeholder="Class Roll number" />
           </Form.Item>
         </div>
 
