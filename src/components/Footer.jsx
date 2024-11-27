@@ -5,8 +5,8 @@ export default function Footer() {
   const codeText = " <code/> ";
   const mailtext = " <mail/> ";
   return (
-    <footer className="flex flex-col bg-black py-8 text-center text-white lg:gap-10">
-      <div className="bg-footer-CTA flex w-full items-center justify-center self-end py-8 md:text-3xl lg:w-4/5 lg:rounded-l-full lg:py-16">
+    <footer className="flex flex-col bg-black pb-8 text-center text-white shadow-md lg:gap-10">
+      <div className="flex w-full items-center justify-center self-end border-b-2 border-accent bg-footer-CTA py-8 md:text-3xl lg:w-4/5 lg:rounded-l-full lg:py-16">
         <div className="flex flex-col items-center justify-between gap-5 md:flex-row lg:w-4/5 xl:w-3/5">
           <div className="flex flex-col gap-5">
             <h3 className="text-3xl font-semibold text-accent">Register Now</h3>
@@ -26,7 +26,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <div className="bg-footer-CTA flex w-full items-center justify-center py-8 md:text-3xl lg:w-4/5 lg:rounded-r-full lg:py-16">
+      <div className="flex w-full items-center justify-center border-accent bg-footer-CTA py-8 md:text-3xl lg:w-4/5 lg:rounded-r-full lg:border-b-2 lg:py-16">
         <div className="flex flex-col items-center justify-between gap-5 md:flex-row lg:w-4/5 lg:flex-row-reverse xl:w-3/5">
           <div className="flex flex-col gap-5">
             <h3 className="text-3xl font-semibold text-accent">Contact Us</h3>
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="pt-3 text-sm">
+      <p className="pt-5 text-sm">
         &copy; {new Date().getFullYear()} GDG On Campus MGMCOET. All rights
         reserved.
       </p>

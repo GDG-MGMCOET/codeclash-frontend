@@ -52,7 +52,7 @@ const About = () => {
               <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                 Division 1:
               </h3>
-              <ul className="list-inside list-disc space-y-2">
+              <ul className="list-inside list-disc">
                 <li>Open to 1st and 2nd-year students only.</li>
                 <li>
                   Designed to encourage newcomers to participate and test their
@@ -69,7 +69,7 @@ const About = () => {
               <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                 Division 2:
               </h3>
-              <ul className="list-inside list-disc space-y-2">
+              <ul className="list-inside list-disc">
                 <li>Open to students from any year.</li>
                 <li>
                   Aimed at advanced coders with strong problem-solving skills.
@@ -95,7 +95,7 @@ const About = () => {
           <h2 className="mb-4 text-center font-mono text-3xl font-bold text-white">
             Rules
           </h2>
-          <ul className="list-inside list-decimal space-y-4 text-lg">
+          <ul className="list-inside list-decimal text-lg">
             <li>
               <span className="font-bold text-accent">No Use of AI Tools:</span>{" "}
               The use of AI tools like ChatGPT, Copilot, or any similar
@@ -122,7 +122,6 @@ const About = () => {
             Prizes
           </h2>
           <div className="space-y-6">
-            {/* Division 1 */}
             <div>
               <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                 Division 1 (1st & 2nd-Year Students):
@@ -131,7 +130,6 @@ const About = () => {
                 Top 3 winners will receive exciting goodies as rewards.
               </p>
             </div>
-            {/* Division 2 */}
             <div>
               <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                 Division 2 (Open to All):
@@ -141,12 +139,11 @@ const About = () => {
                 prize.
               </p>
             </div>
-            {/* Special Rewards */}
             <div>
               <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                 Special Rewards:
               </h3>
-              <ul className="list-inside list-disc space-y-2 text-lg">
+              <ul className="list-inside list-disc text-lg">
                 <li>
                   Two random participants will receive customized T-shirts as a
                   token of appreciation.
@@ -157,7 +154,6 @@ const About = () => {
                 </li>
               </ul>
             </div>
-            {/* Certificates */}
             <div>
               <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                 Certificates:
@@ -169,7 +165,7 @@ const About = () => {
               </p>
             </div>
           </div>
-          <p className="mt-4 text-lg">
+          <p className="text-lg">
             Follow the rules, compete with integrity, and let your coding skills
             shine! Good luck! 🚀
           </p>

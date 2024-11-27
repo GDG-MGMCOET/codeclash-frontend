@@ -28,44 +28,30 @@ export default function Header() {
         <nav
           className={`${
             isOpen ? "block" : "hidden"
-          } absolute left-0 top-full w-full bg-black p-6 font-mono lg:relative lg:flex lg:w-auto lg:items-center lg:bg-transparent lg:p-0`}
+          } absolute left-0 top-full w-full bg-[#00000077] p-6 font-mono lg:relative lg:flex lg:w-auto lg:items-center lg:bg-transparent lg:p-0`}
         >
-          <ul className="flex flex-col gap-4 text-base font-medium text-accent sm:text-lg lg:flex-row lg:gap-8">
+          <ul className="flex flex-col items-center gap-4 text-base font-medium text-accent sm:text-lg lg:flex-row lg:gap-8">
             <li>
-
-              <Link
-                to="/"
-                className="hover:text-yellow-600 cursor-pointer"
-                style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
-              >
+              <Link to="/" className="cursor-pointer hover:text-yellow-600">
                 Home
               </Link>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className="cursor-pointer hover:text-yellow-600"
-                style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
-              >
-                About
-              </a>
             </li>
             <li>
               <Link
                 to="/register"
                 className="cursor-pointer hover:text-yellow-600"
-                style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
               >
                 Register
               </Link>
             </li>
             <li>
               <a
-                href="#contact"
+                href="https://chat.whatsapp.com/KRWeftwCWgN633y9JRS8eg"
                 className="cursor-pointer hover:text-yellow-600"
-                style={{ textShadow: "0 2px 5px rgba(0, 0, 0, 0.3)" }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Contact
+                Join Us
               </a>
             </li>
           </ul>
