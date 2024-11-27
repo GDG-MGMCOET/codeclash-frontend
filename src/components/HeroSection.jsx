@@ -4,7 +4,7 @@ import Countdown from "./Countdown ";
 const HeroSection = () => {
   return (
     <div
-      className="flex h-screen flex-col items-start justify-center gap-5 bg-cover bg-center pl-10 md:pl-12 lg:pl-20 xl:pl-32"
+      className="flex h-dvh flex-col items-start justify-center gap-5 bg-cover bg-center pl-10 md:pl-12 lg:pl-20 xl:pl-32"
       style={{ backgroundImage: "url('/hero.webp')" }}
     >
       <h1 className="text-xl sm:text-xl md:text-2xl lg:text-2xl">

@@ -1,5 +1,5 @@
 import React from "react";
-import Register from "./components/Register";
+import Register from "./pages/Register";
 import LandingPage from "./pages/landingPage";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
