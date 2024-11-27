@@ -10,6 +10,7 @@ export default {
       colors: {
         accent: "#FFC854",
         bg: "#212121",
+        "footer-CTA": "#080a0c",
       },
     },
   },

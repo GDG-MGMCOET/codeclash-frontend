@@ -3,6 +3,16 @@
 @tailwind utilities;
 
 html {
-    scroll-behavior: smooth;
-  }
-  
+  scroll-behavior: smooth;
+}
+
+.background {
+  background: linear-gradient(
+    171.9deg,
+    #080909 2.77%,
+    #080a0a 7.4%,
+    #0c1013 10%,
+    #101d1e 26.93%,
+    #000000 93.77%
+  );
+}

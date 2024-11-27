@@ -8,7 +8,7 @@ export default function Countdown() {
   });
 
   useEffect(() => {
-    const targetDate = new Date("2024-12-02T02:00:00"); // Example time
+    const targetDate = new Date("2024-12-02T13:45:00");
     const interval = setInterval(() => {
       const now = new Date();
       const diff = targetDate - now;

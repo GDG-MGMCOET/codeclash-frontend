@@ -5,14 +5,10 @@ import Footer from "../components/Footer";
 
 export default function LandingPage() {
   return (
-    <div className="App text-white">
+    <div className="bg-black text-white">
       <Header />
-      <section id="home">
-        <Hero />
-      </section>
-      <section id="about" className="scroll-mt-16">
-        <About />
-      </section>
+      <Hero />
+      <About />
       <Footer />
     </div>
   );
