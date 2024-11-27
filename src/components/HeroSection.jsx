@@ -4,18 +4,18 @@ import Countdown from "./Countdown ";
 const HeroSection = () => {
   return (
     <div
-      className="h-screen bg-cover bg-center flex flex-col items-start justify-center text-left pl-6 md:pl-12 lg:pl-20 xl:pl-32"
-      style={{ backgroundImage: "url('/image.webp')" }}
+      className="flex h-screen flex-col items-start justify-center gap-5 bg-cover bg-center pl-10 md:pl-12 lg:pl-20 xl:pl-32"
+      style={{ backgroundImage: "url('/hero.webp')" }}
     >
-      <h1 className="text-l sm:text-xl md:text-2xl text-white lg:text-2xl ">
+      <h1 className="text-xl sm:text-xl md:text-2xl lg:text-2xl">
         MGM COET NOIDA
       </h1>
-      <h1 className="text-3xl font-bold text-accent sm:text-4xl ">
+      <h1 className="text-3xl font-bold text-accent sm:text-4xl">
         MGM CODE CLASH
       </h1>
-      <span className="text-2xl text-white sm:text-3xl ">2024</span>
+      <span className="text-2xl sm:text-3xl">2024</span>
       <Countdown />
-      <button className="mt-6 px-12 py-3 bg-accent text-white font-semibold rounded sm:text-base md:text-lg lg:text-xl xl:text-xl">
+      <button className="rounded-full bg-accent px-12 py-3 font-mono font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600 md:text-lg">
         Register Now
       </button>
     </div>

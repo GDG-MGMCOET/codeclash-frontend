@@ -9,10 +9,9 @@ export default {
     extend: {
       colors: {
         accent: "#FFC854",
+        bg: "#212121",
       },
-      
     },
   },
   plugins: [],
 };
-
