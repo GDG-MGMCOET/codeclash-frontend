@@ -3,9 +3,11 @@ import { CLASSES } from "../utils";
 import { formatFormData, registerParticipant, validatePhone } from "../utils";
 import { ConfigProvider } from "antd";
 import { DIVISION_OPTIONS } from "../utils/constant";
+import { useState } from "react";
 
 export default function Register() {
   const [form] = Form.useForm();
+  const [loading, setLoading] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
   const showMessage = ({ type, content }) => {
     messageApi.open({
@@ -14,10 +16,11 @@ export default function Register() {
     });
   };
   const divisionOptions = [
-    { value: "", label: "Select Division" },
+    { value: "", label: "Select Division", title: "Select Division" },
     ...DIVISION_OPTIONS.map((division) => {
       return {
         value: division.value,
+        title: division.value,
         label: (
           <div className="flex flex-col">
             <div className="font-medium">{division.value}</div>
@@ -29,21 +32,24 @@ export default function Register() {
   ];
   return (
     <div
-      className="flex h-dvh flex-col items-center justify-center gap-10 bg-cover bg-center"
+      className="flex min-h-dvh flex-col items-center justify-center gap-10 bg-cover bg-center"
       style={{ backgroundImage: "url('/hero.webp')" }}
     >
       {contextHolder}
-      <h1 className="font-mono text-4xl font-bold tracking-[5px] text-accent">
-        &lt;/MGM Code Clash&gt;
+      <h1 className="mt-24 font-mono text-3xl font-bold text-accent sm:mt-0 sm:text-4xl sm:tracking-[5px]">
+        &lt;/MGM CodeClash&gt;
       </h1>
 
-      <div className="container mx-auto w-2/3 rounded-3xl border-4 border-accent p-10 backdrop-blur-md lg:w-1/2">
+      <div className="container mx-auto mb-10 w-3/4 rounded-3xl border-4 border-accent p-12 backdrop-blur-md md:w-3/5 lg:w-1/2 xl:w-2/5 2xl:w-1/3">
         <ConfigProvider
           theme={{
             components: {
               InputNumber: {
                 addonBg: "#ffffff",
               },
+            },
+            token: {
+              colorPrimary: "#FFC854",
             },
           }}
         >
@@ -59,22 +65,24 @@ export default function Register() {
             requiredMark={(label, info) => {
               return (
                 <div>
-                  <span className="text-white">{label}</span>
+                  <span className="text-white">{label}</span>{" "}
                   {info.required ? <span className="text-red-600">*</span> : ""}
                 </div>
               );
             }}
             onFinish={(value) => {
+              setLoading(true);
               const formattedData = formatFormData({ data: value });
               registerParticipant({
                 formData: formattedData,
                 showMessage,
                 formInstance: form,
+                setLoading,
               });
             }}
             autoComplete="off"
           >
-            <div className="flex w-full justify-between">
+            <div className="flex w-full flex-col justify-between sm:flex-row sm:gap-10">
               <Form.Item
                 label="First Name"
                 name="firstName"
@@ -86,24 +94,27 @@ export default function Register() {
                   },
                 ]}
                 validateDebounce={500}
-                className="w-2/5"
+                className="w-full sm:w-1/2"
               >
                 <Input className="w-full text-base" placeholder="First Name" />
               </Form.Item>
-              <Form.Item label="Last Name" name="lastName" className="w-2/5">
+              <Form.Item
+                label="Last Name"
+                name="lastName"
+                className="w-full sm:w-1/2"
+              >
                 <Input className="w-full text-base" placeholder="Last Name" />
               </Form.Item>
             </div>
-            <div className="flex w-full justify-between">
+            <div className="flex w-full flex-col justify-between sm:flex-row sm:gap-10">
               <Form.Item
                 label="Phone"
                 name="phone"
                 rules={[{ validator: validatePhone, required: true }]}
                 validateDebounce={500}
-                className="w-2/5"
+                className="w-full sm:w-1/2"
               >
                 <InputNumber
-                  addonBg="#ffffff"
                   addonBefore="+91"
                   className="w-full text-base"
                   placeholder="10 digit phone number"
@@ -121,12 +132,12 @@ export default function Register() {
                   },
                 ]}
                 validateDebounce={500}
-                className="w-2/5"
+                className="w-full sm:w-1/2"
               >
                 <Input className="w-full text-base" placeholder="Email" />
               </Form.Item>
             </div>
-            <div className="flex w-full justify-between">
+            <div className="flex w-full flex-col items-end justify-between sm:flex-row sm:gap-10">
               <Form.Item
                 label="Class"
                 name="standard"
@@ -138,9 +149,9 @@ export default function Register() {
                 ]}
                 validateDebounce={500}
                 initialValue={""}
-                // className="w-2/5"
+                className="w-full sm:w-1/2"
               >
-                <Select options={CLASSES} className="w-full text-base" />
+                <Select options={CLASSES} className="text-base" />
               </Form.Item>
               <Form.Item
                 label="Class Roll no."
@@ -151,7 +162,7 @@ export default function Register() {
                   },
                 ]}
                 validateDebounce={500}
-                className="w-2/5"
+                className="w-full sm:w-1/2"
               >
                 <InputNumber
                   className="w-full text-base"
@@ -160,7 +171,7 @@ export default function Register() {
                 />
               </Form.Item>
             </div>
-            <div className="flex w-full justify-between">
+            <div className="flex w-full flex-col items-end justify-between sm:flex-row sm:gap-10">
               <Form.Item
                 label="Username"
                 name="hackerrank_username"
@@ -172,7 +183,7 @@ export default function Register() {
                   },
                 ]}
                 validateDebounce={500}
-                className="w-2/5"
+                className="w-full sm:w-1/2"
               >
                 <Input
                   className="w-full text-base"
@@ -190,17 +201,21 @@ export default function Register() {
                 ]}
                 validateDebounce={500}
                 initialValue={""}
-                className="w-2/5"
+                className="w-full sm:w-1/2"
               >
                 <Select
                   options={divisionOptions}
                   className="w-full text-base"
+                  labelRender={(label) => {
+                    return <>{label.title}</>;
+                  }}
                 />
               </Form.Item>
             </div>
             <Button
               htmlType="submit"
-              className="self-center rounded-full border-none bg-accent px-12 py-6 font-mono font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600 md:text-xl"
+              className="mt-5 self-center rounded-full border-none bg-accent px-12 py-6 font-mono font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600 md:text-xl"
+              loading={loading}
             >
               Register
             </Button>

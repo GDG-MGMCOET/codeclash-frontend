@@ -46,6 +46,7 @@ export const registerParticipant = async ({
   formData,
   showMessage,
   formInstance,
+  setLoading,
 }) => {
   const res = await registerService.register({ formData });
   if (res?.success) {
@@ -62,4 +63,5 @@ export const registerParticipant = async ({
         : "Error registering, please try again later",
     });
   }
+  setLoading(false);
 };

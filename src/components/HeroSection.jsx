@@ -1,5 +1,7 @@
 import React from "react";
 import Countdown from "./Countdown ";
+import { Button } from "antd";
+import { Link } from "react-router";
 
 const HeroSection = () => {
   return (
@@ -11,13 +13,15 @@ const HeroSection = () => {
         MGM COET NOIDA
       </h1>
       <h1 className="text-3xl font-bold text-accent sm:text-4xl">
-        MGM CODE CLASH
+        MGM CODECLASH
       </h1>
       <span className="text-2xl sm:text-3xl">2024</span>
       <Countdown />
-      <button className="rounded-full bg-accent px-12 py-3 font-mono font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600 md:text-lg">
-        Register Now
-      </button>
+      <Button className="rounded-full bg-accent py-3 font-mono font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600 md:text-lg">
+        <Link to="/register" className="w-full px-12">
+          Register Now
+        </Link>
+      </Button>
     </div>
   );
 };
