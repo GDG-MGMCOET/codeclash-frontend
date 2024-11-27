@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CODING_COMMUNITY } from "../utils/constant";
+import { Button, ConfigProvider } from "antd";
 
 export default function Footer() {
   const codeText = " <code/> ";
@@ -18,11 +19,17 @@ export default function Footer() {
               & Compete
             </p>
           </div>
-          <Link
-            to="/register"
-            className="rounded-full bg-accent px-10 py-3 font-mono text-xl font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600"
-          >
-            Register Now
+          <Link to="/register" className="rounded-full">
+            <ConfigProvider
+              theme={{
+                token: { colorPrimary: "#FFC854" },
+                components: { Button: { defaultHoverBg: "#000" } },
+              }}
+            >
+              <Button className="rounded-full border-none bg-accent px-12 py-6 font-mono font-bold text-black md:text-lg">
+                Register Now
+              </Button>
+            </ConfigProvider>
           </Link>
         </div>
       </div>
@@ -38,12 +45,17 @@ export default function Footer() {
               & Assistance
             </p>
           </div>
-          <a
-            href={CODING_COMMUNITY}
-            target="_blank"
-            className="rounded-full bg-accent px-10 py-3 font-mono text-xl font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600"
-          >
-            Contact Us
+          <a href={CODING_COMMUNITY} target="_blank" className="rounded-full">
+            <ConfigProvider
+              theme={{
+                token: { colorPrimary: "#FFC854" },
+                components: { Button: { defaultHoverBg: "#000" } },
+              }}
+            >
+              <Button className="rounded-full border-none bg-accent px-12 py-6 font-mono font-bold text-black md:text-lg">
+                Contact Us
+              </Button>
+            </ConfigProvider>
           </a>
         </div>
       </div>

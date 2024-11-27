@@ -4,11 +4,11 @@ const About = () => {
   return (
     <div className="background min-h-screen p-6 text-white md:p-10">
       <div className="container mx-auto flex max-w-[1200px] flex-col gap-10 px-6 text-justify">
-        <section className="mt-10">
-          <h1 className="mb-4 text-center font-mono text-4xl font-bold text-white">
+        <section className="mt-10 sm:text-lg">
+          <h1 className="sm:4xl mb-4 text-center font-mono text-3xl font-bold text-white">
             About <span className="">Competition</span>
           </h1>
-          <p className="mb-4 text-lg">
+          <p className="mb-4">
             <span className="text-accent">MGM Code Clash</span> is a highly
             anticipated event organized by the GDG team to inspire, challenge,
             and showcase the coding talent within our student community.
@@ -17,7 +17,7 @@ const About = () => {
             competition is crafted to push your problem-solving abilities,
             logical reasoning, and programming expertise to the next level.
           </p>
-          <p className="mb-4 text-lg">
+          <p className="mb-4">
             The competition revolves around solving thought-provoking problems
             based on programming concepts, data structures, and algorithms
             (DSA). Participants will get a chance to apply their theoretical
@@ -26,7 +26,7 @@ const About = () => {
             ensure fair competition and inclusivity, catering to both newcomers
             and experienced coders alike.
           </p>
-          <p className="text-lg">
+          <p className="">
             <span className="text-accent">MGM Code Clash</span> is not just a
             competition; it’s an opportunity to learn, grow, and connect with
             like-minded individuals. Whether you’re a beginner looking to step
@@ -37,7 +37,7 @@ const About = () => {
         </section>
 
         <section className="">
-          <h2 className="mb-4 text-center font-mono text-3xl font-bold text-white">
+          <h2 className="mb-4 text-center font-mono text-3xl font-bold text-white sm:text-4xl">
             Format
           </h2>
           <p className="mb-4 text-lg">
@@ -47,7 +47,6 @@ const About = () => {
             tailored to different skill levels:
           </p>
           <div className="space-y-6">
-            {/* Division 1 */}
             <div>
               <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                 Division 1:
@@ -64,7 +63,6 @@ const About = () => {
                 </li>
               </ul>
             </div>
-            {/* Division 2 */}
             <div>
               <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
                 Division 2:
@@ -92,10 +90,10 @@ const About = () => {
         </section>
 
         <section className="">
-          <h2 className="mb-4 text-center font-mono text-3xl font-bold text-white">
+          <h2 className="mb-4 text-center font-mono text-3xl font-bold text-white sm:text-4xl">
             Rules
           </h2>
-          <ul className="list-inside list-decimal text-lg">
+          <ul className="list-inside list-decimal sm:text-lg">
             <li>
               <span className="font-bold text-accent">No Use of AI Tools:</span>{" "}
               The use of AI tools like ChatGPT, Copilot, or any similar
@@ -118,12 +116,12 @@ const About = () => {
         </section>
 
         <section>
-          <h2 className="mb-4 text-center font-mono text-3xl font-bold text-white">
+          <h2 className="mb-4 text-center font-mono text-3xl font-bold text-white sm:text-4xl">
             Prizes
           </h2>
           <div className="space-y-6">
             <div>
-              <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
+              <h3 className="text-xl font-semibold text-yellow-400 sm:text-2xl">
                 Division 1 (1st & 2nd-Year Students):
               </h3>
               <p className="text-lg">
@@ -131,7 +129,7 @@ const About = () => {
               </p>
             </div>
             <div>
-              <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
+              <h3 className="text-xl font-semibold text-yellow-400 sm:text-2xl">
                 Division 2 (Open to All):
               </h3>
               <p className="text-lg">
@@ -140,7 +138,7 @@ const About = () => {
               </p>
             </div>
             <div>
-              <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
+              <h3 className="text-xl font-semibold text-yellow-400 sm:text-2xl">
                 Special Rewards:
               </h3>
               <ul className="list-inside list-disc text-lg">
@@ -155,17 +153,17 @@ const About = () => {
               </ul>
             </div>
             <div>
-              <h3 className="mb-2 text-2xl font-semibold text-yellow-400">
+              <h3 className="text-xl font-semibold text-yellow-400 sm:text-2xl">
                 Certificates:
               </h3>
-              <p className="text-lg">
+              <p className="text-base">
                 Every participant will be awarded a certificate of
                 participation, and winners will receive a certificate of
                 excellence.
               </p>
             </div>
           </div>
-          <p className="text-lg">
+          <p className="mt-10 font-mono text-xl">
             Follow the rules, compete with integrity, and let your coding skills
             shine! Good luck! 🚀
           </p>

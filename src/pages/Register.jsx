@@ -1,20 +1,29 @@
-import { Form, Input, Select, Button, message, InputNumber } from "antd";
-import { CLASSES } from "../utils";
-import { formatFormData, registerParticipant, validatePhone } from "../utils";
-import { ConfigProvider } from "antd";
+import {
+  Form,
+  Input,
+  Select,
+  Button,
+  message,
+  InputNumber,
+  ConfigProvider,
+  notification,
+} from "antd";
+import {
+  CLASSES,
+  formatFormData,
+  registerParticipant,
+  validatePhone,
+} from "../utils";
 import { DIVISION_OPTIONS } from "../utils/constant";
 import { useState } from "react";
+import Icon from "@mdi/react";
+import { mdiLinkVariant } from "@mdi/js";
+import { useNavigate } from "react-router";
 
 export default function Register() {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
-  const [messageApi, contextHolder] = message.useMessage();
-  const showMessage = ({ type, content }) => {
-    messageApi.open({
-      type,
-      content,
-    });
-  };
+  const navigate = useNavigate();
   const divisionOptions = [
     { value: "", label: "Select Division", title: "Select Division" },
     ...DIVISION_OPTIONS.map((division) => {
@@ -30,6 +39,21 @@ export default function Register() {
       };
     }),
   ];
+
+  const [api, contextHolder] = notification.useNotification();
+  const openNotificationWithIcon = ({ type, content }, pauseOnHover) => {
+    const key = `open${Date.now()}`;
+
+    api[type]({
+      message: content,
+      placement: "topRight",
+      showProgress: true,
+      key,
+      pauseOnHover,
+      onClose: () => navigate("/"),
+    });
+  };
+
   return (
     <div
       className="flex min-h-dvh flex-col items-center justify-center gap-10 bg-cover bg-center"
@@ -75,7 +99,7 @@ export default function Register() {
               const formattedData = formatFormData({ data: value });
               registerParticipant({
                 formData: formattedData,
-                showMessage,
+                openNotificationWithIcon,
                 formInstance: form,
                 setLoading,
               });
@@ -212,13 +236,29 @@ export default function Register() {
                 />
               </Form.Item>
             </div>
-            <Button
-              htmlType="submit"
-              className="mt-5 self-center rounded-full border-none bg-accent px-12 py-6 font-mono font-bold text-black transition-all duration-300 hover:scale-105 hover:bg-yellow-600 md:text-xl"
-              loading={loading}
+            <ConfigProvider
+              theme={{
+                token: { colorPrimary: "#FFC854" },
+                components: { Button: { defaultHoverBg: "#000" } },
+              }}
             >
-              Register
-            </Button>
+              <Button
+                htmlType="submit"
+                className="mt-2 self-center rounded-full border-none bg-accent px-12 py-6 font-mono font-bold text-black sm:mt-5 md:text-xl"
+                loading={loading}
+              >
+                Register
+              </Button>
+            </ConfigProvider>
+            <a
+              href="https://www.hackerrank.com/auth/signup"
+              className="mt-7 flex items-center gap-2 self-center text-xs text-accent sm:text-sm"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Don't have a Hackerrank account?
+              <Icon path={mdiLinkVariant} size={0.6} />
+            </a>
           </Form>
         </ConfigProvider>
       </div>
