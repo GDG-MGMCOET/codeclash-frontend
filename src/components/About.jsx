@@ -9,29 +9,36 @@ const About = () => {
             About <span className="">Competition</span>
           </h1>
           <p className="mb-4">
-            <span className="text-accent">MGM Code Clash</span> is a highly
-            anticipated event organized by the GDG team to inspire, challenge,
-            and showcase the coding talent within our student community.
-            Scheduled to take place on{" "}
-            <strong>2nd December from 1:45 PM to 3:15 PM</strong>, this
-            competition is crafted to push your problem-solving abilities,
-            logical reasoning, and programming expertise to the next level.
+            <span className="text-accent">MGM Code Clash</span> is flagship
+            coding contest, organized by the Google Developers Group On Campus
+            MGMCOET. Whether you're a beginner or an experienced coder, this
+            event is your chance to challenge yourself, enhance your coding
+            skills, and compete with the best. Get ready for an electrifying
+            experience with exciting challenges, interactive learning, and
+            incredible rewards! Scheduled to take place on&nbsp;
+            <strong className="text-accent">
+              2nd December from 1:45 PM to 3:15 PM
+            </strong>
+            , this competition is crafted to push your problem-solving
+            abilities, logical reasoning, and programming expertise to the next
+            level.
           </p>
           <p className="mb-4">
-            The competition revolves around solving thought-provoking problems
-            based on programming concepts, data structures, and algorithms
-            (DSA). Participants will get a chance to apply their theoretical
-            knowledge in real-world scenarios, fostering creativity and
-            innovation in coding. The event is divided into two divisions to
-            ensure fair competition and inclusivity, catering to both newcomers
-            and experienced coders alike.
+            The competition features engaging problems based on programming
+            concepts, data structures, and algorithms (DSA), designed to
+            encourage logical thinking and creativity. Participants will have
+            the opportunity to apply their knowledge to practical challenges,
+            fostering both skill development and confidence. The event is
+            divided into two divisions to ensure fair competition and
+            inclusivity, catering to both newcomers and experienced coders
+            alike.
           </p>
           <p className="">
-            <span className="text-accent">MGM Code Clash</span> is not just a
-            competition; it’s an opportunity to learn, grow, and connect with
-            like-minded individuals. Whether you’re a beginner looking to step
-            into the exciting world of coding or a seasoned programmer ready to
-            face tough challenges, this event promises to be a thrilling and
+            <span className="text-accent">MGM Code Clash</span> is more than
+            just a coding contest—it's a platform for innovation, collaboration,
+            and growth. Whether you’re a beginner looking to step into the
+            exciting world of coding or a seasoned programmer ready to face
+            tough challenges, this event promises to be a thrilling and
             enriching experience.
           </p>
         </section>
@@ -55,7 +62,8 @@ const About = () => {
                 <li>Open to 1st and 2nd-year students only.</li>
                 <li>
                   Designed to encourage newcomers to participate and test their
-                  foundational knowledge in programming and data structures.
+                  foundational knowledge, offering a beginner-friendly
+                  environment
                 </li>
                 <li>
                   Problems will be beginner to intermediate level, focusing on
@@ -70,7 +78,8 @@ const About = () => {
               <ul className="list-inside list-disc">
                 <li>Open to students from any year.</li>
                 <li>
-                  Aimed at advanced coders with strong problem-solving skills.
+                  Provides an opportunity to compete alongside experienced
+                  peers, fostering growth and collaboration.
                 </li>
                 <li>
                   Problems will be challenging and require an in-depth
@@ -82,10 +91,10 @@ const About = () => {
           <p className="mt-4 text-lg">
             Each division will have its own set of problems, and participants
             will compete within their respective groups. The competition will be
-            conducted online/offline (mention the mode if applicable), and
-            participants are expected to submit their solutions within the given
-            time-frame of 1.5 hours. Rankings will be based on the number of
-            problems solved and the efficiency of the solutions.
+            conducted offline, and participants are expected to submit their
+            solutions within the given time-frame of 1.5 hours. Rankings will be
+            based on the number of problems solved and the efficiency of the
+            solutions.
           </p>
         </section>
 
@@ -95,16 +104,32 @@ const About = () => {
           </h2>
           <ul className="list-inside list-decimal sm:text-lg">
             <li>
-              <span className="font-bold text-accent">No Use of AI Tools:</span>{" "}
-              The use of AI tools like ChatGPT, Copilot, or any similar
-              assistance is strictly prohibited. Participants must rely solely
-              on their own knowledge and skills.
+              <span className="font-bold text-accent">Eligibility:</span> Open
+              to students from MGMCOET, Noida.
             </li>
             <li>
-              <span className="font-bold text-accent">No Cheating:</span> Any
-              form of cheating, including plagiarism or collaboration with
-              others during the competition, will lead to immediate
+              <span className="font-bold text-accent">
+                Individual Participation:
+              </span>{" "}
+              The contest is strictly individual, team participation is not
+              allowed.
+            </li>
+            <li>
+              <span className="font-bold text-accent">No Plagiarism:</span>{" "}
+              Sharing solutions or copying code will lead to immediate
               disqualification.
+            </li>
+            <li>
+              <span className="font-bold text-accent">Allowed Resources:</span>{" "}
+              Participants can refer to official documentation for programming
+              languages and concepts but must avoid any external help or tools
+              like AI for problem-solving.
+            </li>
+            <li>
+              <span className="font-bold text-accent">Ranking Criteria: </span>{" "}
+              Participants will be ranked based on the number of problems solved
+              correctly. In case of a tie, the participant with the least total
+              time taken to solve the problems will rank higher.
             </li>
             <li>
               <span className="font-bold text-accent">Code of Conduct:</span>{" "}
@@ -133,8 +158,8 @@ const About = () => {
                 Division 2 (Open to All):
               </h3>
               <p className="text-lg">
-                Top 3 winners will receive goodies along with an exclusive cash
-                prize.
+                Top 3 winners will receive exciting goodies along with an
+                exclusive cash prize.
               </p>
             </div>
             <div>
@@ -143,8 +168,8 @@ const About = () => {
               </h3>
               <ul className="list-inside list-disc text-lg">
                 <li>
-                  Two random participants will receive customized T-shirts as a
-                  token of appreciation.
+                  Two random participants from each division will receive
+                  customized T-shirts as a token of appreciation.
                 </li>
                 <li>
                   Every participating student will receive exclusive Code Clash
