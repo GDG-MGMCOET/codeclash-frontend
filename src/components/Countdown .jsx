@@ -36,7 +36,7 @@ export default function Countdown() {
         hours: currentHour,
         minutes: currentMinutes,
       });
-    }, 30000);
+    }, 9999000);
 
     return () => clearInterval(interval);
   }, []);
@@ -45,19 +45,19 @@ export default function Countdown() {
     <div className="flex select-none flex-row items-center justify-center gap-4 text-center font-mono">
       <div>
         <h2 className="w-16 rounded-xl bg-gray-800 px-3 py-2 text-3xl text-white sm:w-20 sm:text-4xl md:text-5xl">
-          {timeLeft.days}
+          0
         </h2>
         <p className="text-accent">Days</p>
       </div>
       <div>
         <h2 className="w-16 rounded-xl bg-gray-800 px-3 py-2 text-3xl text-white sm:w-20 sm:text-4xl md:text-5xl">
-          {timeLeft.hours}
+          0
         </h2>
         <p className="text-accent">Hours</p>
       </div>
       <div>
         <h2 className="w-16 rounded-xl bg-gray-800 px-3 py-2 text-3xl text-white sm:w-20 sm:text-4xl md:text-5xl">
-          {timeLeft.minutes}
+          0
         </h2>
         <p className="text-accent">Minutes</p>
       </div>
